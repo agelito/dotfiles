@@ -1,0 +1,17 @@
+  command-log-mode   20160413.447  installed             log keyboard commands to buffer
+  company            20200228.1919 installed             Modular text completion framework
+  csharp-mode        20191126.1928 installed             C# mode derived mode
+  exec-path-from-... 20190426.2227 installed             Get environment variables such as $PATH from the shell
+  git-gutter-fringe  20170113.533  installed             Fringe version of git-gutter.el
+  go-autocomplete    20150904.240  installed             auto-complete-mode backend for go-mode
+  go-mode            20190830.2157 installed             Major mode for the Go programming language
+  golint             20180221.2015 installed             lint for the Go source code
+  json-mode          20190123.422  installed             Major mode for editing JSON files.
+  magit              20200302.2328 installed             A Git porcelain inside Emacs.
+  nyan-mode          20170423.740  installed             Nyan Cat shows position in current buffer in mode-line.
+  org-jira           20190930.1406 installed             Syncing between Jira and Org-mode.
+  ox-jira            20200218.2301 installed             JIRA Backend for Org Export Engine
+  smart-mode-line    20190527.1156 installed             A color coded smart mode-line.
+  smart-tabs-mode    20160629.1452 installed             Intelligently indent with tabs, align with spaces!
+  solarized-theme    20200113.37   installed             The Solarized color theme
+  zenburn-theme      20190809.1324 installed             A low contrast color theme for Emacs.
