@@ -74,7 +74,6 @@ return { -- LSP Configuration & Plugins
     local servers = {
       rust_analyzer = {},
       tsserver = {},
-      tailwindcss = {},
       jsonls = {},
       eslint = {},
       pyright = {},
@@ -96,6 +95,7 @@ return { -- LSP Configuration & Plugins
 
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
+      'tailwindcss',
       'stylua', -- Used to format Lua code
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }

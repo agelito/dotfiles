@@ -10,7 +10,12 @@ return {
   require 'plugins.conform',
   require 'plugins.nvim-cmp',
   require 'plugins.tokyonight',
+  -- require 'plugins.onedark',
+  -- require 'plugins.seoul256',
   require 'plugins.todo-comments',
   require 'plugins.mini',
   require 'plugins.treesitter',
+  require 'plugins.lualine',
+  require 'plugins.neo-tree',
+  require 'plugins.prettier',
 }
