@@ -1,17 +1,10 @@
 return { -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
   dependencies = {
-    -- Automatically install LSPs and related tools to stdpath for Neovim
-    { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
+    { 'williamboman/mason.nvim', config = true },
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
-
-    -- Useful status updates for LSP.
-    -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { 'j-hui/fidget.nvim', opts = {} },
-
-    -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
-    -- used for completion, annotations and signatures of Neovim apis
     { 'folke/neodev.nvim', opts = {} },
   },
   config = function()
@@ -31,9 +24,6 @@ return { -- LSP Configuration & Plugins
         map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
         map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
         map('K', vim.lsp.buf.hover, 'Hover Documentation')
-
-        -- WARN: This is not Goto Definition, this is Goto Declaration.
-        --  For example, in C this would take you to the header.
         map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
         local client = vim.lsp.get_client_by_id(event.data.client_id)
@@ -73,20 +63,15 @@ return { -- LSP Configuration & Plugins
 
     local servers = {
       rust_analyzer = {},
-      tsserver = {},
       jsonls = {},
       eslint = {},
       pyright = {},
       dockerls = {},
       docker_compose_language_service = {},
-
+      gopls = {},
       lua_ls = {
         settings = {
-          Lua = {
-            completion = {
-              callSnippet = 'Replace',
-            },
-          },
+          Lua = { completion = { callSnippet = 'Replace' } },
         },
       },
     }
@@ -96,7 +81,7 @@ return { -- LSP Configuration & Plugins
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       'tailwindcss',
-      'stylua', -- Used to format Lua code
+      'stylua',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
