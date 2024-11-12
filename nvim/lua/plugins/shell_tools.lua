@@ -186,4 +186,14 @@ return {
       { '<leader>vc', '<cmd>VenvSelectCached<cr>' },
     },
   },
+  {
+    'toppair/peek.nvim',
+    build = 'deno task --quiet build:fast',
+    config = function()
+      local peek = require 'peek'
+
+      vim.keymap.set('n', '<leader>mo', peek.open, { desc = '[M]arkdown [O]pen Preview' })
+      vim.keymap.set('n', '<leader>mc', peek.close, { desc = '[M]arkdown [C]lose Preview' })
+    end,
+  },
 }

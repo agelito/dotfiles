@@ -1,4 +1,4 @@
-return { -- LSP Configuration & Plugins
+return {
   'neovim/nvim-lspconfig',
   dependencies = {
     { 'williamboman/mason.nvim', config = true },
@@ -52,6 +52,7 @@ return { -- LSP Configuration & Plugins
 
         if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
           map('<leader>th', function()
+            ---@diagnostic disable-next-line: missing-parameter
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
           end, '[T]oggle Inlay [H]ints')
         end
@@ -62,27 +63,28 @@ return { -- LSP Configuration & Plugins
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     local servers = {
-      rust_analyzer = {},
-      jsonls = {},
-      eslint = {},
+      rust_analyzer = { settings = { ['rust-analyzer'] = { checkOnSave = { command = 'clippy' } } } },
       pyright = {},
       dockerls = {},
       docker_compose_language_service = {},
-      gopls = {},
       lua_ls = {
         settings = {
           Lua = { completion = { callSnippet = 'Replace' } },
         },
       },
+      stylua = {},
+      tailwindcss = {},
+      eslint = {},
+      prettierd = {},
+      svelte = {},
+      ts_ls = {},
+      rustywind = {},
+      jsonls = {},
     }
 
     require('mason').setup()
 
     local ensure_installed = vim.tbl_keys(servers or {})
-    vim.list_extend(ensure_installed, {
-      'tailwindcss',
-      'stylua',
-    })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
     require('mason-lspconfig').setup {

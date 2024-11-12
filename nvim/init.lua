@@ -24,10 +24,14 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
-vim.opt.colorcolumn = '100'
+vim.opt.colorcolumn = '120'
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+vim.diagnostic.config {
+  virtual_text = false,
+}
 
 -- Key Bindings
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -52,7 +56,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-require('config.lazy')
+require 'config.lazy'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
