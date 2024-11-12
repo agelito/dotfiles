@@ -18,6 +18,7 @@ return {
         'svelte',
         'javascript',
         'typescript',
+        'gitcommit',
       },
       auto_install = true,
       highlight = { enable = true },
