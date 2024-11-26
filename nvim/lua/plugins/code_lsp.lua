@@ -65,6 +65,7 @@ return {
     local servers = {
       rust_analyzer = { settings = { ['rust-analyzer'] = { checkOnSave = { command = 'clippy' } } } },
       pyright = {},
+      ruff = {},
       dockerls = {},
       docker_compose_language_service = {},
       lua_ls = {
@@ -80,6 +81,10 @@ return {
       ts_ls = {},
       rustywind = {},
       jsonls = {},
+      terraformls = {},
+      mdformat = {},
+      mdslw = {},
+      yamlls = {},
     }
 
     require('mason').setup()

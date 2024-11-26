@@ -19,6 +19,7 @@ return {
         'javascript',
         'typescript',
         'gitcommit',
+        'python',
       },
       auto_install = true,
       highlight = { enable = true },
@@ -88,12 +89,12 @@ return {
       },
     },
   },
-  {
+  --[[{
     'ErichDonGubler/lsp_lines.nvim',
     config = function()
       local lsp_lines = require 'lsp_lines'
       lsp_lines.setup()
       vim.keymap.set('n', '<leader>id', lsp_lines.toggle, { desc = 'Inline Diagnostics' })
     end,
-  },
+  },--]]
 }

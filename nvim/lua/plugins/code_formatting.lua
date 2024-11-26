@@ -23,6 +23,7 @@ return {
     formatters_by_ft = {
       lua = { 'stylua' },
       svelte = { 'prettierd' },
+      markdown = { 'prettier' },
     },
   },
 }
